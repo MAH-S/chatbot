@@ -1,23 +1,53 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Navbar from './Navbar';
+
 
 function App() {
+  const [messages, setMessages] = useState([
+    { text: 'Hello! How can I help you today?', user: 'Bot' },
+    { text: 'I need some information.', user: 'You' },
+    { text: 'Sure, what do you need to know?', user: 'Bot' }
+  ]);
+  const [input, setInput] = useState('');
+
+  const handleSendMessage = () => {
+    if (input.trim() === '') return;
+
+    const newMessage = { text: input, user: 'You' };
+    const botReply = { text: 'This is a dummy response.', user: 'Bot' };
+
+    setMessages([...messages, newMessage, botReply]);
+    setInput('');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
   return (
+    <div className='page'>
+      <Navbar/>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="chat-box">
+        {messages.map((msg, index) => (
+          <div key={index} className={`message ${msg.user === 'You' ? 'user' : 'bot'}`}>
+            <strong>{msg.user}: </strong>{msg.text}
+          </div>
+        ))}
+      </div>
+      <div className="input-box">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <button onClick={handleSendMessage}>Send</button>
+      </div>
+    </div>
     </div>
   );
 }
