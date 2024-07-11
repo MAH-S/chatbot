@@ -7,15 +7,15 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-brand">Chat App</div>
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="javascript:void(0);">Home</a></li>
+        <li><a href="javascript:void(0);">About</a></li>
+        <li><a href="javascript:void(0);">Contact</a></li>
         <li className="dropdown">
-          <a href="#" className="dropbtn">Profile</a>
+          <a href="javascript:void(0);" className="dropbtn">Profile</a>
           <div className="dropdown-content">
-            <a href="#">My Profile</a>
-            <a href="#">Settings</a>
-            <a href="#">Logout</a>
+            <a href="javascript:void(0);">My Profile</a>
+            <a href="javascript:void(0);">Settings</a>
+            <a href="javascript:void(0);">Logout</a>
           </div>
         </li>
       </ul>
