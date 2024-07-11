@@ -36,7 +36,9 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     - name: Build Docker image
+      working-directory: ./chatbotreact
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/your-react-app:latest .
 
     - name: Push Docker image
+      working-directory: ./chatbotreact
       run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/your-react-app:latest
