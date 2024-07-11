@@ -1,4 +1,3 @@
-// Navbar.js
 import React from 'react';
 import './Navbar.css';
 
@@ -7,15 +6,22 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-brand">Chat App</div>
       <ul className="nav-links">
-        <li><a href="javascript:void(0);">Home</a></li>
-        <li><a href="javascript:void(0);">About</a></li>
-        <li><a href="javascript:void(0);">Contact</a></li>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <li><a href="#">Home</a></li>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <li><a href="#">About</a></li>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <li><a href="#">Contact</a></li>
         <li className="dropdown">
-          <a href="javascript:void(0);" className="dropbtn">Profile</a>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a href="#" className="dropbtn">Profile</a>
           <div className="dropdown-content">
-            <a href="javascript:void(0);">My Profile</a>
-            <a href="javascript:void(0);">Settings</a>
-            <a href="javascript:void(0);">Logout</a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#">My Profile</a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#">Settings</a>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#">Logout</a>
           </div>
         </li>
       </ul>
